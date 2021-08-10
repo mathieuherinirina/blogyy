@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/utilities.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <!--navbar-->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo">Blog.</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="articles">Articles</a></li>
+                    <li><a href="aprop">A propos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--Showcase-->
+    <section class="showcase">
+        <div class="container grid">
+            <div class="showcase-form card">
+                <% if(erreur == true){%>
+                    <div class="ui negative message">
+                        Veuillez, écrire quelque chose
+                    </div>
+                    <%} %>
+                        <h1>Bienvenue sur "Blog."</h1>
+                        <form action="/" method="POST">
+                            <div class="form-control">
+                                <h2>Ajoutez vos articles!</h2>
+                                <div class="field">
+                                    <input type="text" name="titre" style=border-color:black; placeholder="Votre titre">
+                                </div>
+                                <div class="field">
+                                    <textarea name="description" id="description" cols="130" rows="6" placeholder="Ajouter votre description"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit icon button">    
+                                      > Enregistrer
+                                    </button>
+                        </form>
+            </div>
+        </div>
+
+    </section>
+    <!--STATS-->
+    <section class="stats">
+        <div class="container">
+            <div class="ui comments">
+                <h1 class="stats-heading text-center my-1">
+                    Vos Articles
+                </h1>
+                <% for (description of articles ) {%>
+                    <div class="cont-form card">
+                        <div class="comment">
+                            <div class="contenu ">
+                                <div class="title">
+                                    <h2>
+                                        <%= description.titre%>
+                                    </h2>
+                                </div>
+                                <br>
+                                <div class="test">
+                                    <%= description.description %>
+                                </div>
+                                <br>
+                                <hr>
+                                <div class="date">
+                                    <%= description.date %>
+                                </div>
+                                <button type="submit" class="btn btn-primary submit icon button" method="EDIT"> > Editer </button>
+                                <button type="submit" class="btn btn-primary submit icon button" method="DELETE"> > Supprimer </button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <hr>
+                    <% }%>
+            </div>
+            <br>
+            <br>
+            <h3 class="stats-heading text-center my-1">
+                Toujour prét à etre utiliser .
+            </h3>
+            <div class="grid grid-3 text-center my-4">
+                <div>
+                    <i class="icon server"></i>
+                    <span class="fh5co-counter js-counter" data-from="0" data-to="8687" data-speed="5000" data-refresh-interval="50"><h3>8687</h3></span>
+                    <p class="text-secondary">Enregistrés</p>
+                </div>
+                <div>
+                    <i class="icon upload"></i>
+                    <span class="fh5co-counter js-counter" data-from="0" data-to="444" data-speed="5000" data-refresh-interval="50"><h3>444 TB</h3></span>
+                    <p class="text-secondary">Publiés</p>
+                </div>
+                <div>
+                    <i class="icon eyes"></i>
+                    <span class="fh5co-counter js-counter" data-from="0" data-to="54562" data-speed="5000" data-refresh-interval="50"><h3>54562</h3></span>
+                    <p class="text-secondary">Abonnées</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--cli-->
+    <section class="cli">
+        <div class="container grid">
+            <img src="Images/img/Capture.PNG" alt="">
+            <div class="card">
+                <h3>Facile</h3>
+            </div>
+            <div class="card">
+                <h3>Enregistrer</h3>
+            </div>
+        </div>
+    </section>
+    <!--cloud-->
+    <section class="cloud bg-primary my-2 py-2">
+        <marquee direction="right">
+            <div class="container grid">
+                <!--<i class="fas fa-cloud fa-10x"></i>-->
+                <div class="text-center">
+                    <h2 class="lg">Publicités</h2>
+                    <p class="lead my-1"> "Blog." vous aime.Rapide & efficace</p>
+                </div>
+            </div>
+        </marquee>
+    </section>
+    <section class="languages">
+        <h2 class="md text-center my-2">
+            Sponsors :
+        </h2>
+        <div class="container flex">
+            <div class="card">
+                <h4>Node.js</h4>
+                <img src="Images/img/node-js.png" alt="">
+            </div>
+            <div class="card">
+                <h4>Python</h4>
+                <img src="Images/img/python.jpg" alt="">
+            </div>
+            <div class="card">
+                <h4>C#</h4>
+                <img src="Images/img/csha.png" alt="">
+            </div>
+            <div class="card">
+                <h4>Ruby</h4>
+                <img src="Images/img/ruby.png" alt="">
+            </div>
+            <div class="card">
+                <h4>Php</h4>
+                <img src="Images/img/php.png" alt="">
+            </div>
+        </div>
+    </section>
+    <!--footer-->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>Blog.</h1>
+                <p>Copyright &copy; 2021</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="articles">Articles</a></li>
+                    <li><a href="aprop">A propos</a></li>
+                </ul>
+            </nav>
+            <div class="social">
+                <a href="#!"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#!"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#!"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#!"><i class="fab fa-twitter fa-2x"></i></a>
+
+            </div>
+
+
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
